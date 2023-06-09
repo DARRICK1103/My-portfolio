@@ -38,7 +38,7 @@
 
         #board {
             display: block;
-            margin: 50px auto;
+            margin: 30px auto;
             border: 1px solid #000;
             background-color: #fff;
             
@@ -98,6 +98,20 @@
             margin-right: 1000px;
             margin-left: 170px;
         }
+        ol.decimal {list-style-type: decimal;}
+
+        #toggleButton{
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        #toggleButton:hover{
+            background:#000000;
+            color: #fff;
+        }
+
+
+
     </style>
     <script src="snake.js"></script>
 </head>
@@ -107,7 +121,52 @@
         <h1>Snake Game</h1>
         <h2 id="h2">Score:  0 </h2>
     </div>
-    <canvas id="board"></canvas>
+    <div style="display: flex; justify-content: center;">
+        <div id="instructionDiv" style="border-radius: 10px; border: 3px solid #000; width: 430px; height: 250px; padding: 0 10px; margin-top: 30px; margin-left: 13px;">
+            <h3>INSTRUCTION</h3>
+            <ol class="decimal">
+                <li>Use the arrow keys (up, down, left, right) or the WASD keys (W for up, A for left, S for down, D for right) to control the snake's movement.</li>
+                <li>The snake will continuously move in the specified direction until you change it.</li>
+                <li>Avoid colliding with the walls or the snake's own body, as this will end the game.</li>
+                <li>Eat the red fruit to increase the snake's length and score points.</li>
+            </ol>
+        </div>
+        <canvas id="board" style="margin-left: 20px;"></canvas>
+    </div>
+    <div style="display: flex; justify-content: center; margin-top: 0px;">
+        <button id="toggleButton" onclick="toggleInstruction()">Hide Instruction</button>
+    </div>
+    
+    
+
+    <script>
+        var instructionDiv = document.getElementById("instructionDiv");
+        var toggleButton = document.getElementById("toggleButton");
+        var isInstructionVisible = true;
+    
+         function toggleInstruction() {
+        if (isInstructionVisible) {
+          instructionDiv.style.visibility = "hidden";
+          toggleButton.textContent = "Display Instruction";
+          toggleButton.style.background = "#000000";
+          toggleButton.style.color = "#ffffff";
+        } else {
+          instructionDiv.style.visibility = "visible";
+          toggleButton.textContent = "Hide Instruction";
+          toggleButton.style.background = "white";
+          toggleButton.style.color = "#000000";
+        }
+        isInstructionVisible = !isInstructionVisible;
+      }
+    </script>
+    
+    <style>
+        #board {
+            margin-left: 20px;
+        }
+    </style>
+    
+    
     <!-- HTML !-->
     <div class="button-container">
         <button class="button-27" role="button" id="leave" onclick="window.location.href='project.html'">Leave</button>

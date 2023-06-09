@@ -41,32 +41,20 @@ window.onload = function(){
     
 }
 
-function changeDirection(e){
-
-    if (e.code == "ArrowUp" && velocityY != 1)
-    {
-        velocityX = 0;
-        velocityY = -1;
-    }
-    else if (e.code == "ArrowDown" && velocityY != -1)
-    {
-        velocityX = 0;
-        velocityY = 1;
-
-    }
-    else if (e.code == "ArrowLeft" && velocityX != 1)
-    {
-        velocityX = -1;
-        velocityY = 0;
-
-    }
-    else if (e.code == "ArrowRight" && velocityX != -1)
-    {
-        velocityX = 1;
-        velocityY = 0;
-
-    }
-
+function changeDirection(e) {
+  if ((e.code === "ArrowUp" || e.code === "KeyW") && velocityY !== 1) {
+      velocityX = 0;
+      velocityY = -1;
+  } else if ((e.code === "ArrowDown" || e.code === "KeyS") && velocityY !== -1) {
+      velocityX = 0;
+      velocityY = 1;
+  } else if ((e.code === "ArrowLeft" || e.code === "KeyA") && velocityX !== 1) {
+      velocityX = -1;
+      velocityY = 0;
+  } else if ((e.code === "ArrowRight" || e.code === "KeyD") && velocityX !== -1) {
+      velocityX = 1;
+      velocityY = 0;
+  }
 }
 
 

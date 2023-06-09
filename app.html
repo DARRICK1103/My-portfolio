@@ -70,24 +70,27 @@
             </div>
           </div>
         </div>
-          <script>
-            var video = document.getElementById('student-video');
-          
-            // Add event listener to replay video when it ends
-            video.addEventListener('ended', function() {
-              if (video.ended) {
-                video.currentTime = 0; // Reset playback to the beginning
-                video.play(); // Start playing again
-              }
-            });
-          
-            // Pause video when the page is unloaded
-            window.addEventListener('beforeunload', function() {
-              video.pause();
-              video.currentTime = 0;
-            });
-          </script>
+         
           
     </div>
+
+    
+    <script>
+      var video = document.getElementById('student-video');
+    
+      // Add event listener to replay video when it ends
+      video.addEventListener('ended', function() {
+        if (video.ended) {
+          video.currentTime = 0; // Reset playback to the beginning
+          video.play(); // Start playing again
+        }
+      });
+    
+      // Pause video when the page is unloaded
+      window.addEventListener('beforeunload', function() {
+        video.pause();
+        video.currentTime = 0;
+      });
+    </script>
 </body>
 </html>

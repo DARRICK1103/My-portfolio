@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/cb5107b77d.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+     <style>
+    .animation-container {
+      position: relative;
+      width: 700px;
+      height: 250px;
+      margin: 0 auto;
+      overflow: hidden;
+      margin-top: 1%;
+    }
+    
+    .ball {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      transition: transform 1s ease-in-out;
+    }
+    
+    .red {
+      background-color: red;
+    }
+    
+    .green {
+      background-color: green;
+    }
+    
+    .separator {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 2px;
+      background-color: black;
+      transform: translateX(-50%);
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+    }
+
+    .container-spam{
+      position: relative;
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/gif.js/dist/gif.js"></script>
+    <title>Spam Messages</title>
+</head>
+<body style="background: #f7f7f7;">
+    <div id="container">
+        <div id="navbar">
+            <div id="logo">
+                <img src="image/logo_darrick.png" alt="logo">
+            </div>
+            <ul>
+                <li><div class="button_nav" onclick="window.location.href='index1.html'">Home</div></li>
+                <li><div class="button_nav" onclick="window.location.href='about.html'">About</div></li>
+                <li><div class="button_nav" onclick="window.location.href='resume.html'">Resume</div></li>
+                <li><div class="button_nav" onclick="window.location.href='project.html'">Projects</div></li>
+                <li><div class="button_nav" onclick="window.location.href='contact.html'">Contact</div></li>
+            </ul>
+            
+        </div>
+        <div class="container7">
+            <div class="w3-third w3-margin-bottom">
+              <div class="w3-card-4" style="padding: 5%; margin-left: 33%; padding-bottom: 3%; width: 1000px;">
+                <div class="container-tittle" style="display: flex; justify-content: center;">
+                  <h2 style="font-weight: bold;">Spam Messages Classification</h2>
+                </div>                
+                <div style="display: flex;
+                justify-content: center;
+                align-items: center;">
+                  <div style="margin-right: 100px">
+                    <h3>Spam Messages</h3>
+                  </div>
+                  <div style="margin-left: 30px;">
+                    <h3>Ham Messages</h3>
+                  </div>
+                </div>
+              
+                <div class="animation-container">
+                  <div class="ball red" style="top: 20%; left: 40%;"></div>
+                  <div class="ball red" style="top: 30%; left: 30%;"></div>
+                  <div class="ball red" style="top: 25%; left: 60%;"></div>
+                  <div class="ball red" style="top: 35%; left: 50%;"></div>
+                  <div class="ball green" style="top: 55%; left: 40%;"></div>
+                  <div class="ball green" style="top: 65%; left: 40%;"></div>
+                  <div class="ball green" style="top: 55%; left: 60%;"></div>
+                  <div class="ball green" style="top: 65%; left: 60%;"></div>
+                  <div class="separator"></div>
+                </div>
+                
+                <div class="container-spam" style="width:800px;  margin: 0 auto;margin-top: 5%;">
+                
+                  <p>
+                    The classification project aims to develop an AI system that can recognize and block spam SMS messages. The objective is to prevent the spread of spam messages, reduce the risk of people being scammed, and save time by filtering out meaningless SMS.
+                    <br> <br>
+                    The scope of the project involves developing a prototype that can classify spam SMS messages by distinguishing them from legitimate (ham) messages. The prototype will analyze the suspicious parts of spam messages and classify them as fake news. It will be trained on a dataset to learn how to accurately classify SMS messages.
+                    <br> <br>
+                    The significance of this project lies in its ability to help people identify and classify SMS messages, thus preventing them from falling victim to scams. By ignoring spam SMS messages, users can avoid providing their personal information to malicious sources and reduce potential losses.
+                    <br> <br>
+                    The expected outcome of the project is a prototype that can display the total number of spam SMS messages classified from the dataset. Additionally, the prototype's accuracy must exceed 80% to ensure reliable results.
+                    <br> <br>
+                    In conclusion, Support Vector Machine (SVM) is a powerful technique used for spam SMS classification. It involves preprocessing the data, extracting relevant features, training the SVM model, and tuning the hyperparameters for optimal performance. By leveraging the ability of SVM to find an optimal hyperplane, this technique can effectively distinguish between spam and ham messages, helping to prevent the spread of spam, reduce scams, and save users' time by filtering out irrelevant SMS.
+                  </p>
+                  
+                </div>
+                <div style=" margin-left: 45%;">
+                  <button id="button-color" onclick="window.location.href='https://github.com/DARRICK1103/Spam-Messages-Machine-Learning-'">Source Codes</button>
+                </div>
+                
+              </div>
+
+              <script>
+                const gif = new GIF({
+                  workers: 2,
+                  quality: 10,
+                });
+
+                const balls = document.querySelectorAll('.ball');
+                const separator = document.querySelector('.separator');
+
+                function animateBalls() {
+                  setTimeout(() => {
+                    balls.forEach((ball, index) => {
+                      const isRedBall = ball.classList.contains('red');
+                      const translateX = isRedBall ? -150 : 150;
+                      const translateY = index % 2 === 0 ? -50 : 30;
+                      ball.style.transform = `translate(${translateX}px, ${translateY}px)`;
+                    });
+
+                    separator.style.opacity = 1;
+
+                    gif.addFrame(document.querySelector('.animation-container'), { copy: true, delay: 200 });
+
+                    setTimeout(() => {
+                      gif.render();
+                    }, 200);
+                  }, 200);
+                }
+
+                animateBalls();
+
+                gif.on('finished', function(blob) {
+                  const img = document.createElement('img');
+                  img.src = URL.createObjectURL(blob);
+                  document.body.appendChild(img);
+                });
+              </script>
+                
+              </div>
+            </div>
+          </div>
+          
+          <script>
+            var video = document.getElementById('student-video');
+          
+            // Add event listener to replay video when it ends
+            video.addEventListener('ended', function() {
+              if (video.ended) {
+                video.currentTime = 0; // Reset playback to the beginning
+                video.play(); // Start playing again
+              }
+            });
+          
+            // Pause video when the page is unloaded
+            window.addEventListener('beforeunload', function() {
+              video.pause();
+              video.currentTime = 0;
+            });
+          </script>
+          
+    </div>
+</body>
+</html>

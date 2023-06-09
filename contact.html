@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/cb5107b77d.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.js"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- Bootstrap JS (Optional) -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <title>contact</title>
+</head>
+<body>
+    <div id="container">
+        <div id="navbar">
+            <div id="logo">
+                <img src="image/logo_darrick.png" alt="logo">
+            </div>
+            <ul>
+                <li><div class="button_nav" onclick="window.location.href='index1.html'">Home</div></li>
+                <li><div class="button_nav" onclick="window.location.href='about.html'">About</div></li>
+                <li><div class="button_nav" onclick="window.location.href='resume.html'">Resume</div></li>
+                <li><div class="button_nav" onclick="window.location.href='project.html'">Projects</div></li>
+                <li><div class="button_nav" onclick="window.location.href=''">Contact</div></li>
+            </ul>
+            
+        </div>
+        <div class="content_contact">
+            <section class="contact" id="contact">
+              <div class="container">
+                  
+                  <div class="row">
+                      <div class="col-md-5">
+                          <div class="title">
+                              <h3>Contact Me</h3>
+                              <p>Please don't hesitate to reach out to me at your convenience </p>
+                          </div>
+                          <div class="content">
+                              <!-- Info-1 -->
+                              <div class="info">
+                                  <i class="fas fa-mobile-alt"></i>
+                                  <h4 class="d-inline-block">PHONE :
+                                      <br>
+                                      <span>+60163813842</span></h4>
+                              </div>
+                              <!-- Info-2 -->
+                              <div class="info">
+                                  <i class="far fa-envelope"></i>
+                                  <h4 class="d-inline-block">EMAIL :
+                                      <br>
+                                      <span>darrick0409@gmail.com</span></h4>
+                              </div>
+                              <!-- Info-3 -->
+                             
+                          </div>
+                      </div>
+      
+                      <div class="col-md-7" id="form-contact">
+      
+                        <form id="contactForm" onsubmit="sendEmail(event)">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" id="nameInput" placeholder="Name" required>
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="email" class="form-control" id="emailInput" placeholder="Email" required>
+                                </div>
+                                <div class="col-sm-12">
+                                    <input type="text" class="form-control" id="subjectInput" placeholder="Subject" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-control" rows="5" id="messageInput" placeholder="Message" required></textarea>
+                            </div>
+                            <button class="btn btn-block" type="submit">Send Now</button>
+                        </form>
+                        
+                        <script>
+                            function sendEmail(event) {
+                                event.preventDefault();
+                        
+                                // Extract the form field values
+                                var name = document.getElementById("nameInput").value;
+                                var email = document.getElementById("emailInput").value;
+                                var subject = document.getElementById("subjectInput").value;
+                                var message = document.getElementById("messageInput").value;
+                        
+                                // Compose the email body using only the content of the message
+                                var emailBody = message;
+                        
+                                // Compose the email link
+                                var emailLink = "mailto:darrick0409@gmail.com" +
+                                    "?subject=" + encodeURIComponent(subject) +
+                                    "&body=" + encodeURIComponent(emailBody);
+                        
+                                // Open the email client with pre-populated fields
+                                window.location.href = emailLink;
+                            }
+                        </script>
+                        
+                      </div>
+                  </div>
+              </div>
+          </section>
+          </div>
+    </div>
+</body>
+</html>

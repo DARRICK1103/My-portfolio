@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/cb5107b77d.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+      .out{
+            display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-top: -8%;
+          margin-bottom: -8%;
+          padding: 0%;
+        }
+        </style>
+    <title>Badminton E-Commerce</title>
+</head>
+<body style="background: #f7f7f7;">
+  <div id="container">
+      <div id="navbar">
+          <div id="logo">
+              <img src="image/logo_darrick.png" alt="logo">
+          </div>
+          <ul>
+              <li><div class="button_nav" onclick="window.location.href='index1.html'">Home</div></li>
+              <li><div class="button_nav" onclick="window.location.href='about.html'">About</div></li>
+              <li><div class="button_nav" onclick="window.location.href='resume.html'">Resume</div></li>
+              <li><div class="button_nav" onclick="window.location.href='project.html'">Projects</div></li>
+              <li><div class="button_nav" onclick="window.location.href='contact.html'">Contact</div></li>
+          </ul>
+          
+      </div>
+      <div class="container7">
+          <div class="w3-third w3-margin-bottom">
+            <div class="w3-card-4" style="padding: 5%; margin-left: 33%; padding-bottom: 3%; width: 1000px;">
+              <div class="container-tittle" style="display: flex; justify-content: center;">
+                <h2 style="font-weight: bold;">Badminton E-Commerce</h2>
+              </div>                
+             
+            
+              <div class="out">
+                
+                <video id="student-video" width="800" height="640" autoplay loop muted>
+                  <source src="video/badminton.mp4" type="video/mp4">
+                  <source src="video/badminton.mp4" type="video/ogg">
+                  Your browser does not support the video tag.
+                </video>
+            
+            </div>
+              
+              <div class="container-spam" style="width:800px;  margin: 0 auto;margin-top: 3%;">
+                <p>
+                  The Badminton e-commerce platform is an online store that specializes in selling badminton products to customers. The platform offers a variety of product categories, including racquets, shoes, shuttlecocks, and others.
+              <br> <br>
+              To access the features and make purchases on the platform, customers need to register an account. During the registration process, customers provide their personal information, such as name, email address, and contact details. Once registered, customers can log in to their accounts to browse and purchase items.
+              <br> <br>
+              When logged in, customers have the ability to add items to their shopping cart. They can select products from any of the available categories, including racquets, shoes, shuttlecocks, and others. The cart allows customers to review their selected items, update quantities, and remove items if desired.
+              <br> <br>
+              After customers have finalized their selection, they proceed to the checkout process. During checkout, customers are prompted to choose their preferred payment method. The platform offers multiple payment options, including Touch and Go, Boost, Grab, and bank transfer. Customers can select the method that suits them best.
+              <br> <br>
+              Once the payment is successfully processed, customers receive a receipt as confirmation of their purchase. The receipt contains details such as the order number, purchased items, payment method, billing and shipping information, and the total amount paid. Customers can keep the receipt for their records and reference.
+              </p>
+              </div>
+              <div style=" margin-left: 45%;">
+                <button id="button-color" onclick="window.location.href='https://github.com/DARRICK1103/Badminton-E-Commerce'">Source Codes</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+          <script>
+            var video = document.getElementById('student-video');
+          
+            // Add event listener to replay video when it ends
+            video.addEventListener('ended', function() {
+              if (video.ended) {
+                video.currentTime = 0; // Reset playback to the beginning
+                video.play(); // Start playing again
+              }
+            });
+          
+            // Pause video when the page is unloaded
+            window.addEventListener('beforeunload', function() {
+              video.pause();
+              video.currentTime = 0;
+            });
+          </script>
+          
+    </div>
+</body>
+</html>

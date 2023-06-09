@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/cb5107b77d.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Knapsack Problem</title>
+</head>
+
+<body style="background: #f7f7f7;">
+    <div id="container">
+        <div id="navbar">
+            <div id="logo">
+                <img src="image/logo_darrick.png" alt="logo">
+            </div>
+            <ul>
+                <li><div class="button_nav" onclick="window.location.href='index1.html'">Home</div></li>
+                <li><div class="button_nav" onclick="window.location.href='about.html'">About</div></li>
+                <li><div class="button_nav" onclick="window.location.href='resume.html'">Resume</div></li>
+                <li><div class="button_nav" onclick="window.location.href='project.html'">Projects</div></li>
+                <li><div class="button_nav" onclick="window.location.href='contact.html'">Contact</div></li>
+            </ul>
+            
+        </div>
+        <div class="container7">
+            <div class="w3-third w3-margin-bottom">
+              <div class="w3-card-4" style="padding: 5%; margin-left: 15%; padding-bottom: 3%; width: 1200px;">
+                <div style="display: flex; align-items: flex-start; justify-content: space-between;">
+                  <div style="flex: 1; padding-right: 5%; padding-left: -1%;">
+                    <img src="image/knapsack.png" width="530" height="740">
+                
+                  </div>
+                  <div id="student" style="flex: 1; margin-left: -100px;">
+                    <h3>Knapsack Problem</h3>
+                    <p>
+                        The genetic algorithm is a heuristic search method used to solve the Knapsack Problem. In this approach, the problem is tackled by representing potential solutions as chromosomes, typically in the form of binary strings. Each chromosome corresponds to a candidate solution, indicating which items are included in the knapsack.
+                    <br> <br>
+                    The algorithm begins by generating an initial population of chromosomes randomly. The fitness of each chromosome is evaluated based on the total value of the included items and their weight compared to the knapsack's capacity. Higher fitness indicates a better solution.
+                    <br> <br>
+                    In each generation, a selection process is performed to choose chromosomes for reproduction based on their fitness. This process favors chromosomes with higher fitness, increasing the probability of passing on their genetic material to the next generation. Various selection methods can be used, such as tournament selection or roulette wheel selection.
+                    <br> <br>
+                    Crossover and mutation are applied to the selected chromosomes. Crossover involves exchanging genetic material between pairs of chromosomes to create offspring with a combination of characteristics from their parents. Mutation introduces random changes to individual chromosomes, allowing for exploration of new solutions.
+                    <br> <br>
+                    The offspring, along with some surviving individuals from the previous generation, form the population for the next generation. The process of selection, crossover, and mutation continues for multiple generations, gradually improving the fitness of the population. The algorithm iteratively explores the solution space, aiming to converge towards a set of near-optimal or optimal solutions that maximize the value of items while satisfying the weight constraint of the knapsack.
+                    </p>
+                    <button id="button-color"  onclick="window.location.href='https://github.com/DARRICK1103/Knapsack-Problem'" style="right: -100px;">Source Codes</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <script>
+            var video = document.getElementById('student-video');
+          
+            // Add event listener to replay video when it ends
+            video.addEventListener('ended', function() {
+              if (video.ended) {
+                video.currentTime = 0; // Reset playback to the beginning
+                video.play(); // Start playing again
+              }
+            });
+          
+            // Pause video when the page is unloaded
+            window.addEventListener('beforeunload', function() {
+              video.pause();
+              video.currentTime = 0;
+            });
+          </script>
+          
+    </div>
+</body>
+</html>

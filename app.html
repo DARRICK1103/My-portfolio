@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/cb5107b77d.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+    .out{
+          display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 3%;
+      }
+      </style>
+    <title>Bin Challing</title>
+</head>
+<body style="background: #f7f7f7;">
+  <div id="container">
+      <div id="navbar">
+          <div id="logo">
+              <img src="image/logo_darrick.png" alt="logo">
+          </div>
+          <ul>
+              <li><div class="button_nav" onclick="window.location.href='index1.html'">Home</div></li>
+              <li><div class="button_nav" onclick="window.location.href='about.html'">About</div></li>
+              <li><div class="button_nav" onclick="window.location.href='resume.html'">Resume</div></li>
+              <li><div class="button_nav" onclick="window.location.href='project.html'">Projects</div></li>
+              <li><div class="button_nav" onclick="window.location.href='contact.html'">Contact</div></li>
+          </ul>
+          
+      </div>
+      <div class="container7">
+          <div class="w3-third w3-margin-bottom">
+            <div class="w3-card-4" style="padding: 5%; margin-left: 33%; padding-bottom: 3%; width: 1000px;">
+              <div class="container-tittle" style="display: flex; justify-content: center;">
+                <h2 style="font-weight: bold;">Reinforcement Learning</h2>
+              </div>                
+             
+            
+              <div class="out">
+                
+                <section class="youtube-embed">
+                  <iframe width="560" height="315" src="https://www.youtube.com/embed/2Pnm1vxth2k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </section>
+            
+            </div>
+              
+              <div class="container-spam" style="width:800px;  margin: 0 auto;margin-top: 3%;">
+                <p> 
+                  The app "Bin Challing" is an Android mobile game developed by our group "Domino's" for the Android Mobile App Series Competition. The purpose of the app is to make learning binary and decimal addition more engaging and accessible to students.
+                  <br> <br>
+                  The idea behind the app came from our observation that many students struggle to understand the binary number system, even though it is included in the primary school syllabus. We wanted to create a learning tool that would simplify the process and make it more enjoyable for young students.
+                  <br> <br>
+                  With "Bin Challing," students can practice binary and decimal addition through a game-like interface. They can download the app from the app store and start challenging themselves in solving various addition problems. The game presents binary and decimal numbers for the students to add, and they need to select the correct answer from the given options.
+                  <br> <br>
+                  One of the key features of the app is the ability for teachers to track students' progress. The app records the scores that students achieve in each test, allowing teachers to monitor their learning and ensure that they grasp the concepts of binary and decimal addition effectively.
+                  <br> <br>
+                  The app aims to make learning binary and decimal addition a fun and interactive experience for students while providing teachers with valuable insights into their students' progress. By using the app, students can improve their understanding of the binary number system and enhance their addition skills.
+                  </p>
+              </div>
+              <div style=" margin-left: 45%;">
+                <button id="button-color" onclick="window.location.href='https://github.com/DARRICK1103/Bin-Challing'">Source Codes</button>
+              </div>
+            </div>
+          </div>
+        </div>
+          <script>
+            var video = document.getElementById('student-video');
+          
+            // Add event listener to replay video when it ends
+            video.addEventListener('ended', function() {
+              if (video.ended) {
+                video.currentTime = 0; // Reset playback to the beginning
+                video.play(); // Start playing again
+              }
+            });
+          
+            // Pause video when the page is unloaded
+            window.addEventListener('beforeunload', function() {
+              video.pause();
+              video.currentTime = 0;
+            });
+          </script>
+          
+    </div>
+</body>
+</html>

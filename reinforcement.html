@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/cb5107b77d.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+      .out{
+          display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 3%;
+      }
+  
+      .container10 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 200px;
+      }
+  
+      .node {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 18px;
+        font-weight: bold;
+        color: white;
+        margin: 0 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        
+      }
+  
+      .target-found {
+        font-size: 24px;
+        font-weight: bold;
+        color:black;
+          top:33%;
+        position: absolute;
+      
+        
+      }
+  
+      .ball {
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background-color: white;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        transition: left 0.5s ease-in-out;
+      }
+    </style>
+    <title>Reinforcement Learning</title>
+</head>
+<body style="background: #f7f7f7;">
+    <div id="container">
+        <div id="navbar">
+            <div id="logo">
+                <img src="image/logo_darrick.png" alt="logo">
+            </div>
+            <ul>
+                <li><div class="button_nav" onclick="window.location.href='index1.html'">Home</div></li>
+                <li><div class="button_nav" onclick="window.location.href='about.html'">About</div></li>
+                <li><div class="button_nav" onclick="window.location.href='resume.html'">Resume</div></li>
+                <li><div class="button_nav" onclick="window.location.href='project.html'">Projects</div></li>
+                <li><div class="button_nav" onclick="window.location.href='contact.html'">Contact</div></li>
+            </ul>
+            
+        </div>
+        <div class="container7">
+            <div class="w3-third w3-margin-bottom">
+              <div class="w3-card-4" style="padding: 5%; margin-left: 33%; padding-bottom: 3%; width: 1000px;">
+                <div class="container-tittle" style="display: flex; justify-content: center;">
+                  <h2 style="font-weight: bold;">Reinforcement Learning</h2>
+                </div>                
+               
+              
+                <div class="out">
+                  <div class="target-found" style="display: none;">Target Found !!</div>
+                  <div class="container10">
+                      <div class="node">0</div>
+                      <div class="node">1</div>
+                      <div class="node">2</div>
+                      <div class="node">3</div>
+                      <div class="node">4</div>
+                      <div class="ball"></div>
+                  </div>
+              
+              </div>
+                
+                <div class="container-spam" style="width:800px;  margin: 0 auto;margin-top: 3%;">
+                
+                  <p>
+                    In this task, we have an agent that needs to move from a starting node to reach a target node. The agent's goal is to find the shortest distance to reach the target node efficiently. The environment consists of several nodes, labeled as Node 0, Node 1, Node 2, Node 3, and Node 4, with the starting node located on the leftmost side and the target node located on the rightmost side.
+                    <br> <br>
+                    The agent can take two possible actions: moving left or moving right. The states represent the current position of the agent, which can be any of the nodes in the environment. The agent receives a reward of 0 for each move unless it reaches the target node, in which case it receives a delayed reward of 1.
+                    <br> <br>
+                    The goal of the agent is to find the shortest distance in this one-dimensional world, navigating from the starting node to the target node. To achieve this, the agent uses an exploration strategy called epsilon-greedy, where epsilon is initially set to 1, indicating a high exploration rate. As the agent learns more about the environment, the epsilon value decays, favoring exploitation over exploration.
+                    <br> <br>
+                    One challenge in this problem is that the agent has partial observability of the states. It needs to determine the position of the target node to make informed decisions. Additionally, the agent employs life-long learning to find the shortest path, which is determined by the shortest time taken to reach the goal.
+                    <br> <br>
+                    To solve this problem, the agent uses epsilon-greedy Q-learning, a model-free reinforcement learning algorithm. It maintains a Q-table that estimates the maximum expected future rewards for each action at each state. The Q-values represent how good it is to take a particular action at a specific state.
+                    <br> <br>
+                    By using this Q-table, the agent can make decisions on whether to move left or right at each stage, aiming to maximize the cumulative rewards and find the shortest path to the target node in the one-dimensional world.
+                  </p>
+                </div>
+                <div style=" margin-left: 45%;">
+                  <button id="button-color" onclick="window.location.href='https://github.com/DARRICK1103/reinforcement-learning'">Source Codes</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <script>
+            window.addEventListener('DOMContentLoaded', () => {
+              const nodes = document.querySelectorAll('.node');
+              const ball = document.querySelector('.ball');
+              const targetFound = document.querySelector('.target-found');
+              const sequence = [1, 0, 1, 2, 3, 2, 1, 2, 3, 2, 3, 4];
+              let currentIndex = 0;
+        
+              function animateBall() {
+                const targetNode = nodes[sequence[currentIndex]];
+                const targetX = targetNode.offsetLeft + targetNode.offsetWidth / 2 - ball.offsetWidth / 2;
+        
+                ball.style.left = targetX + 'px';
+        
+                if (sequence[currentIndex] === 4) {
+                  targetFound.style.display = 'block';
+                } else {
+                  targetFound.style.display = 'none';
+                }
+        
+                currentIndex++;
+        
+                if (currentIndex >= sequence.length) {
+                  currentIndex = 0;
+                }
+        
+                setTimeout(animateBall, 1000);
+              }
+        
+              animateBall();
+            });
+          </script>
+          
+    </div>
+</body>
+</html>
